@@ -1,0 +1,104 @@
+global:
+  smtp_smarthost: 'localhost:587'
+  smtp_from: 'alerts@argus.local'
+  smtp_auth_username: 'alerts@argus.local'
+  smtp_auth_password: 'your-smtp-password'
+
+route:
+  group_by: ['alertname', 'cluster', 'service']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 1h
+  receiver: 'default-receiver'
+  routes:
+    - match:
+        severity: critical
+      receiver: 'critical-alerts'
+      group_wait: 5s
+      repeat_interval: 30m
+    - match:
+        component: security
+      receiver: 'security-alerts'
+      group_wait: 0s
+      repeat_interval: 15m
+    - match:
+        component: detection
+      receiver: 'detection-alerts'
+      group_wait: 30s
+      repeat_interval: 2h
+
+receivers:
+  - name: 'default-receiver'
+    email_configs:
+      - to: 'ops-team@argus.local'
+        subject: '[Argus Alert] {{ .GroupLabels.alertname }}'
+        body: |
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          Labels: {{ range .Labels.SortedPairs }}{{ .Name }}={{ .Value }} {{ end }}
+          {{ end }}
+
+  - name: 'critical-alerts'
+    email_configs:
+      - to: 'critical-alerts@argus.local'
+        subject: '[CRITICAL] Argus Alert: {{ .GroupLabels.alertname }}'
+        body: |
+          CRITICAL ALERT DETECTED
+          
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          Severity: {{ .Labels.severity }}
+          Component: {{ .Labels.component }}
+          Time: {{ .StartsAt }}
+          Labels: {{ range .Labels.SortedPairs }}{{ .Name }}={{ .Value }} {{ end }}
+          {{ end }}
+    slack_configs:
+      - api_url: 'YOUR_SLACK_WEBHOOK_URL'
+        channel: '#critical-alerts'
+        title: 'Critical Argus Alert'
+        text: |
+          {{ range .Alerts }}
+          *{{ .Annotations.summary }}*
+          {{ .Annotations.description }}
+          {{ end }}
+
+  - name: 'security-alerts'
+    email_configs:
+      - to: 'security-team@argus.local'
+        subject: '[SECURITY] Argus Alert: {{ .GroupLabels.alertname }}'
+        body: |
+          SECURITY ALERT DETECTED
+          
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          Time: {{ .StartsAt }}
+          Labels: {{ range .Labels.SortedPairs }}{{ .Name }}={{ .Value }} {{ end }}
+          {{ end }}
+    webhook_configs:
+      - url: 'http://security-service:8002/alerts/webhook'
+        send_resolved: true
+
+  - name: 'detection-alerts'
+    email_configs:
+      - to: 'detection-team@argus.local'
+        subject: '[Detection] Argus Alert: {{ .GroupLabels.alertname }}'
+        body: |
+          DETECTION SYSTEM ALERT
+          
+          {{ range .Alerts }}
+          Alert: {{ .Annotations.summary }}
+          Description: {{ .Annotations.description }}
+          Camera: {{ .Labels.camera_id }}
+          Location: {{ .Labels.location }}
+          Time: {{ .StartsAt }}
+          {{ end }}
+
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'cluster', 'service']

@@ -1,0 +1,188 @@
+groups:
+  - name: project-argus-alerts
+    rules:
+      # System Health Alerts
+      - alert: ServiceDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: system
+        annotations:
+          summary: "Service {{ $labels.job }} is down"
+          description: "Service {{ $labels.job }} has been down for more than 1 minute."
+
+      - alert: HighCPUUsage
+        expr: (100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)) > 80
+        for: 5m
+        labels:
+          severity: warning
+          component: system
+        annotations:
+          summary: "High CPU usage on {{ $labels.instance }}"
+          description: "CPU usage is above 80% for more than 5 minutes on {{ $labels.instance }}."
+
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          component: system
+        annotations:
+          summary: "High memory usage on {{ $labels.instance }}"
+          description: "Memory usage is above 85% for more than 5 minutes on {{ $labels.instance }}."
+
+      - alert: DiskSpaceLow
+        expr: (node_filesystem_avail_bytes / node_filesystem_size_bytes) * 100 < 10
+        for: 5m
+        labels:
+          severity: critical
+          component: system
+        annotations:
+          summary: "Low disk space on {{ $labels.instance }}"
+          description: "Disk space is below 10% on {{ $labels.instance }} filesystem {{ $labels.mountpoint }}."
+
+      # Application-specific Alerts
+      - alert: HighDetectionLatency
+        expr: histogram_quantile(0.95, rate(argus_detection_duration_seconds_bucket[5m])) > 0.3
+        for: 2m
+        labels:
+          severity: warning
+          component: detection
+        annotations:
+          summary: "High detection latency"
+          description: "95th percentile detection latency is above 300ms for more than 2 minutes."
+
+      - alert: HighFalsePositiveRate
+        expr: rate(argus_false_positive_alerts_total[1h]) > 1
+        for: 5m
+        labels:
+          severity: warning
+          component: detection
+        annotations:
+          summary: "High false positive rate"
+          description: "False positive rate is above 1 per hour for camera {{ $labels.camera_id }}."
+
+      - alert: CameraTamperDetected
+        expr: increase(argus_tamper_events_total[5m]) > 0
+        for: 0s
+        labels:
+          severity: critical
+          component: security
+        annotations:
+          summary: "Camera tamper detected"
+          description: "Tamper event detected on camera {{ $labels.camera_id }} at location {{ $labels.location }}."
+
+      - alert: EdgeNodeOffline
+        expr: up{job="argus-edge-nodes"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: edge
+        annotations:
+          summary: "Edge node offline"
+          description: "Edge node {{ $labels.instance }} with camera {{ $labels.camera_id }} has been offline for more than 1 minute."
+
+      # Database Alerts
+      - alert: PostgreSQLDown
+        expr: pg_up == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: database
+        annotations:
+          summary: "PostgreSQL is down"
+          description: "PostgreSQL database is down for more than 1 minute."
+
+      - alert: PostgreSQLTooManyConnections
+        expr: sum(pg_stat_activity_count) by (instance) > 80
+        for: 5m
+        labels:
+          severity: warning
+          component: database
+        annotations:
+          summary: "PostgreSQL too many connections"
+          description: "PostgreSQL has more than 80 active connections for more than 5 minutes."
+
+      - alert: RedisDown
+        expr: redis_up == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: cache
+        annotations:
+          summary: "Redis is down"
+          description: "Redis cache is down for more than 1 minute."
+
+      - alert: RedisHighMemoryUsage
+        expr: redis_memory_used_bytes / redis_memory_max_bytes * 100 > 90
+        for: 5m
+        labels:
+          severity: warning
+          component: cache
+        annotations:
+          summary: "Redis high memory usage"
+          description: "Redis memory usage is above 90% for more than 5 minutes."
+
+      # Security Alerts
+      - alert: UnauthorizedAccess
+        expr: increase(argus_unauthorized_access_attempts_total[5m]) > 5
+        for: 0s
+        labels:
+          severity: critical
+          component: security
+        annotations:
+          summary: "Multiple unauthorized access attempts"
+          description: "More than 5 unauthorized access attempts detected in the last 5 minutes from {{ $labels.source_ip }}."
+
+      - alert: EncryptionFailure
+        expr: increase(argus_encryption_failures_total[5m]) > 0
+        for: 0s
+        labels:
+          severity: critical
+          component: security
+        annotations:
+          summary: "Encryption failure detected"
+          description: "Encryption failure detected in {{ $labels.service }}. Immediate attention required."
+
+      # Performance Alerts
+      - alert: HighResponseTime
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2
+        for: 5m
+        labels:
+          severity: warning
+          component: performance
+        annotations:
+          summary: "High response time"
+          description: "95th percentile response time is above 2 seconds for {{ $labels.service }} endpoint {{ $labels.endpoint }}."
+
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) * 100 > 5
+        for: 5m
+        labels:
+          severity: warning
+          component: performance
+        annotations:
+          summary: "High error rate"
+          description: "Error rate is above 5% for {{ $labels.service }} for more than 5 minutes."
+
+      # Evidence Management Alerts
+      - alert: EvidenceStorageFailure
+        expr: increase(argus_evidence_storage_failures_total[5m]) > 0
+        for: 0s
+        labels:
+          severity: critical
+          component: evidence
+        annotations:
+          summary: "Evidence storage failure"
+          description: "Evidence storage failure detected. Data integrity may be compromised."
+
+      - alert: EvidenceIntegrityViolation
+        expr: increase(argus_evidence_integrity_violations_total[5m]) > 0
+        for: 0s
+        labels:
+          severity: critical
+          component: evidence
+        annotations:
+          summary: "Evidence integrity violation"
+          description: "Evidence integrity violation detected. Potential tampering or corruption."

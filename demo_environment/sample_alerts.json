@@ -1,0 +1,342 @@
+[
+  {
+    "id": "alert_demo_001",
+    "type": "virtual_line_crossing",
+    "severity": "high",
+    "camera_id": "demo_camera_001",
+    "detection_id": "det_demo_001",
+    "timestamp": "2025-11-02T09:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.6,
+    "description": "Unauthorized crossing detected",
+    "acknowledged": false,
+    "acknowledged_by": null,
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_main_gate"
+    }
+  },
+  {
+    "id": "alert_demo_002",
+    "type": "virtual_line_crossing",
+    "severity": "medium",
+    "camera_id": "demo_camera_002",
+    "detection_id": "det_demo_002",
+    "timestamp": "2025-11-02T10:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.7,
+    "description": "Possible crossing - verification needed",
+    "acknowledged": true,
+    "acknowledged_by": "operator_2",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_perimeter_east"
+    }
+  },
+  {
+    "id": "alert_demo_003",
+    "type": "tamper_detection",
+    "severity": "critical",
+    "camera_id": "demo_camera_003",
+    "detection_id": "det_demo_003",
+    "timestamp": "2025-11-02T10:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.8,
+    "description": "Camera tampering detected",
+    "acknowledged": true,
+    "acknowledged_by": "operator_3",
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_patrol_route"
+    }
+  },
+  {
+    "id": "alert_demo_004",
+    "type": "system_health",
+    "severity": "low",
+    "camera_id": "demo_camera_001",
+    "detection_id": "det_demo_004",
+    "timestamp": "2025-11-02T11:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.9,
+    "description": "Camera offline - maintenance required",
+    "acknowledged": true,
+    "acknowledged_by": "operator_1",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_main_gate"
+    }
+  },
+  {
+    "id": "alert_demo_005",
+    "type": "virtual_line_crossing",
+    "severity": "high",
+    "camera_id": "demo_camera_002",
+    "detection_id": "det_demo_005",
+    "timestamp": "2025-11-02T11:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.6,
+    "description": "Multiple simultaneous crossings",
+    "acknowledged": false,
+    "acknowledged_by": null,
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_perimeter_east"
+    }
+  },
+  {
+    "id": "alert_demo_006",
+    "type": "virtual_line_crossing",
+    "severity": "high",
+    "camera_id": "demo_camera_003",
+    "detection_id": "det_demo_006",
+    "timestamp": "2025-11-02T12:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.7,
+    "description": "Unauthorized crossing detected",
+    "acknowledged": true,
+    "acknowledged_by": "operator_3",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_patrol_route"
+    }
+  },
+  {
+    "id": "alert_demo_007",
+    "type": "virtual_line_crossing",
+    "severity": "medium",
+    "camera_id": "demo_camera_001",
+    "detection_id": "det_demo_007",
+    "timestamp": "2025-11-02T12:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.8,
+    "description": "Possible crossing - verification needed",
+    "acknowledged": true,
+    "acknowledged_by": "operator_1",
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_main_gate"
+    }
+  },
+  {
+    "id": "alert_demo_008",
+    "type": "tamper_detection",
+    "severity": "critical",
+    "camera_id": "demo_camera_002",
+    "detection_id": "det_demo_008",
+    "timestamp": "2025-11-02T13:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.9,
+    "description": "Camera tampering detected",
+    "acknowledged": true,
+    "acknowledged_by": "operator_2",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_perimeter_east"
+    }
+  },
+  {
+    "id": "alert_demo_009",
+    "type": "system_health",
+    "severity": "low",
+    "camera_id": "demo_camera_003",
+    "detection_id": "det_demo_009",
+    "timestamp": "2025-11-02T13:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.6,
+    "description": "Camera offline - maintenance required",
+    "acknowledged": false,
+    "acknowledged_by": null,
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_patrol_route"
+    }
+  },
+  {
+    "id": "alert_demo_010",
+    "type": "virtual_line_crossing",
+    "severity": "high",
+    "camera_id": "demo_camera_001",
+    "detection_id": "det_demo_010",
+    "timestamp": "2025-11-02T14:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.7,
+    "description": "Multiple simultaneous crossings",
+    "acknowledged": true,
+    "acknowledged_by": "operator_1",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_main_gate"
+    }
+  },
+  {
+    "id": "alert_demo_011",
+    "type": "virtual_line_crossing",
+    "severity": "high",
+    "camera_id": "demo_camera_002",
+    "detection_id": "det_demo_011",
+    "timestamp": "2025-11-02T14:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.8,
+    "description": "Unauthorized crossing detected",
+    "acknowledged": true,
+    "acknowledged_by": "operator_2",
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_perimeter_east"
+    }
+  },
+  {
+    "id": "alert_demo_012",
+    "type": "virtual_line_crossing",
+    "severity": "medium",
+    "camera_id": "demo_camera_003",
+    "detection_id": "det_demo_012",
+    "timestamp": "2025-11-02T15:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.9,
+    "description": "Possible crossing - verification needed",
+    "acknowledged": true,
+    "acknowledged_by": "operator_3",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_patrol_route"
+    }
+  },
+  {
+    "id": "alert_demo_013",
+    "type": "tamper_detection",
+    "severity": "critical",
+    "camera_id": "demo_camera_001",
+    "detection_id": "det_demo_013",
+    "timestamp": "2025-11-02T15:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.6,
+    "description": "Camera tampering detected",
+    "acknowledged": false,
+    "acknowledged_by": null,
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_main_gate"
+    }
+  },
+  {
+    "id": "alert_demo_014",
+    "type": "system_health",
+    "severity": "low",
+    "camera_id": "demo_camera_002",
+    "detection_id": "det_demo_014",
+    "timestamp": "2025-11-02T16:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.7,
+    "description": "Camera offline - maintenance required",
+    "acknowledged": true,
+    "acknowledged_by": "operator_2",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_perimeter_east"
+    }
+  },
+  {
+    "id": "alert_demo_015",
+    "type": "virtual_line_crossing",
+    "severity": "high",
+    "camera_id": "demo_camera_003",
+    "detection_id": "det_demo_015",
+    "timestamp": "2025-11-02T16:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.8,
+    "description": "Multiple simultaneous crossings",
+    "acknowledged": true,
+    "acknowledged_by": "operator_3",
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_patrol_route"
+    }
+  },
+  {
+    "id": "alert_demo_016",
+    "type": "virtual_line_crossing",
+    "severity": "high",
+    "camera_id": "demo_camera_001",
+    "detection_id": "det_demo_016",
+    "timestamp": "2025-11-02T17:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.9,
+    "description": "Unauthorized crossing detected",
+    "acknowledged": true,
+    "acknowledged_by": "operator_1",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_main_gate"
+    }
+  },
+  {
+    "id": "alert_demo_017",
+    "type": "virtual_line_crossing",
+    "severity": "medium",
+    "camera_id": "demo_camera_002",
+    "detection_id": "det_demo_017",
+    "timestamp": "2025-11-02T17:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.6,
+    "description": "Possible crossing - verification needed",
+    "acknowledged": false,
+    "acknowledged_by": null,
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_perimeter_east"
+    }
+  },
+  {
+    "id": "alert_demo_018",
+    "type": "tamper_detection",
+    "severity": "critical",
+    "camera_id": "demo_camera_003",
+    "detection_id": "det_demo_018",
+    "timestamp": "2025-11-02T18:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.7,
+    "description": "Camera tampering detected",
+    "acknowledged": true,
+    "acknowledged_by": "operator_3",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_patrol_route"
+    }
+  },
+  {
+    "id": "alert_demo_019",
+    "type": "system_health",
+    "severity": "low",
+    "camera_id": "demo_camera_001",
+    "detection_id": "det_demo_019",
+    "timestamp": "2025-11-02T18:31:03.511832",
+    "confidence": 0.8,
+    "risk_score": 0.8,
+    "description": "Camera offline - maintenance required",
+    "acknowledged": true,
+    "acknowledged_by": "operator_1",
+    "metadata": {
+      "crossing_direction": "inbound",
+      "virtual_line_id": "vline_main_gate"
+    }
+  },
+  {
+    "id": "alert_demo_020",
+    "type": "virtual_line_crossing",
+    "severity": "high",
+    "camera_id": "demo_camera_002",
+    "detection_id": "det_demo_020",
+    "timestamp": "2025-11-02T19:01:03.511832",
+    "confidence": 0.9,
+    "risk_score": 0.9,
+    "description": "Multiple simultaneous crossings",
+    "acknowledged": true,
+    "acknowledged_by": "operator_2",
+    "metadata": {
+      "crossing_direction": "outbound",
+      "virtual_line_id": "vline_perimeter_east"
+    }
+  }
+]

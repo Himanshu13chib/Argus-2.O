@@ -1,0 +1,159 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Project Argus - Detection Performance",
+    "tags": ["argus", "detection", "performance"],
+    "style": "dark",
+    "timezone": "browser",
+    "refresh": "10s",
+    "time": {
+      "from": "now-30m",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "Detection Latency",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(argus_detection_duration_seconds_bucket[5m]))",
+            "legendFormat": "95th percentile - {{camera_id}}"
+          },
+          {
+            "expr": "histogram_quantile(0.50, rate(argus_detection_duration_seconds_bucket[5m]))",
+            "legendFormat": "50th percentile - {{camera_id}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Latency (seconds)",
+            "min": 0,
+            "max": 1
+          }
+        ],
+        "alert": {
+          "conditions": [
+            {
+              "query": {"queryType": "", "refId": "A"},
+              "reducer": {"type": "last", "params": []},
+              "evaluator": {"params": [0.3], "type": "gt"}
+            }
+          ],
+          "executionErrorState": "alerting",
+          "for": "2m",
+          "frequency": "10s",
+          "handler": 1,
+          "name": "High Detection Latency",
+          "noDataState": "no_data"
+        },
+        "gridPos": {"h": 8, "w": 24, "x": 0, "y": 0}
+      },
+      {
+        "id": 2,
+        "title": "Detection Accuracy",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(argus_true_positive_detections_total[5m]) / rate(argus_total_detections_total[5m]) * 100",
+            "legendFormat": "True Positive Rate - {{camera_id}}"
+          },
+          {
+            "expr": "rate(argus_false_positive_detections_total[5m]) / rate(argus_total_detections_total[5m]) * 100",
+            "legendFormat": "False Positive Rate - {{camera_id}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Percentage",
+            "min": 0,
+            "max": 100
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8}
+      },
+      {
+        "id": 3,
+        "title": "Confidence Score Distribution",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(argus_detection_confidence_bucket[5m]))",
+            "legendFormat": "95th percentile - {{camera_id}}"
+          },
+          {
+            "expr": "histogram_quantile(0.50, rate(argus_detection_confidence_bucket[5m]))",
+            "legendFormat": "50th percentile - {{camera_id}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Confidence Score",
+            "min": 0,
+            "max": 1
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8}
+      },
+      {
+        "id": 4,
+        "title": "Virtual Line Crossings",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(argus_virtual_line_crossings_total[5m])",
+            "legendFormat": "Crossings/sec - {{camera_id}} - {{line_id}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Crossings per second",
+            "min": 0
+          }
+        ],
+        "gridPos": {"h": 8, "w": 24, "x": 0, "y": 16}
+      },
+      {
+        "id": 5,
+        "title": "Tracking Performance",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(argus_tracks_created_total[5m])",
+            "legendFormat": "New Tracks/sec - {{camera_id}}"
+          },
+          {
+            "expr": "rate(argus_tracks_lost_total[5m])",
+            "legendFormat": "Lost Tracks/sec - {{camera_id}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Tracks per second",
+            "min": 0
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 24}
+      },
+      {
+        "id": 6,
+        "title": "Re-ID Accuracy",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(argus_reid_matches_correct_total[5m]) / rate(argus_reid_matches_total[5m]) * 100",
+            "legendFormat": "Re-ID Accuracy % - {{camera_id}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Accuracy %",
+            "min": 0,
+            "max": 100
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 24}
+      }
+    ]
+  }
+}

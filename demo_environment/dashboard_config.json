@@ -1,0 +1,51 @@
+{
+  "title": "Project Argus - Border Security Demo",
+  "version": "1.0.0",
+  "demo_mode": true,
+  "auto_refresh_interval": 5000,
+  "map_config": {
+    "center": {
+      "lat": 28.6139,
+      "lng": 77.209
+    },
+    "zoom": 15,
+    "style": "satellite"
+  },
+  "camera_grid": {
+    "layout": "2x2",
+    "auto_cycle": true,
+    "cycle_interval": 10000
+  },
+  "alert_settings": {
+    "sound_enabled": true,
+    "popup_enabled": true,
+    "auto_acknowledge_timeout": 300000
+  },
+  "demo_scenarios": [
+    {
+      "name": "Normal Operations",
+      "description": "Typical day with authorized crossings",
+      "duration": "5 minutes",
+      "cameras": [
+        "demo_camera_001",
+        "demo_camera_003"
+      ]
+    },
+    {
+      "name": "Security Incident",
+      "description": "Unauthorized crossing with multiple alerts",
+      "duration": "3 minutes",
+      "cameras": [
+        "demo_camera_002"
+      ]
+    },
+    {
+      "name": "System Maintenance",
+      "description": "Camera maintenance and health monitoring",
+      "duration": "2 minutes",
+      "cameras": [
+        "demo_camera_004"
+      ]
+    }
+  ]
+}

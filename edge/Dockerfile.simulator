@@ -1,0 +1,62 @@
+# Edge Node Simulator for Development and Testing
+FROM python:3.11-slim as base
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    python3-dev \
+    build-essential \
+    cmake \
+    pkg-config \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    libavcodec-dev \
+    libavformat-dev \
+    libswscale-dev \
+    libv4l-dev \
+    libxvidcore-dev \
+    libx264-dev \
+    libgtk-3-dev \
+    libatlas-base-dev \
+    gfortran \
+    wget \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY edge/requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Install CPU-only versions for simulation
+RUN pip3 install --no-cache-dir \
+    ultralytics \
+    onnxruntime \
+    opencv-python
+
+# Copy shared models and interfaces
+COPY shared/ ./shared/
+
+# Copy edge application code
+COPY edge/ ./
+
+# Create directories for models and data
+RUN mkdir -p /app/models /app/data /app/logs /app/test_data
+
+# Set environment variables
+ENV PYTHONPATH=/app
+ENV SIMULATION_MODE=true
+ENV LOG_LEVEL=DEBUG
+
+# Expose ports
+EXPOSE 8001 8002
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8001/health || exit 1
+
+# Run the edge detection service in simulation mode
+CMD ["python3", "main.py", "--simulate"]

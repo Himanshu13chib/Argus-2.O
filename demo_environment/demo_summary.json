@@ -1,0 +1,15 @@
+{
+  "demo_path": "demo_environment",
+  "created_at": "2025-11-02T21:31:03.520315",
+  "components": {
+    "cameras": 4,
+    "virtual_lines": 3,
+    "video_scenarios": 5,
+    "detections": 50,
+    "alerts": 20,
+    "incidents": 10,
+    "evidence": 30
+  },
+  "total_files": 18,
+  "demo_ready": true
+}

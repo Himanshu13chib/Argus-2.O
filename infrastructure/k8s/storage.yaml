@@ -1,0 +1,63 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: argus-ssd
+provisioner: kubernetes.io/aws-ebs
+parameters:
+  type: gp3
+  fsType: ext4
+  encrypted: "true"
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: project-argus
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: argus-ssd
+  resources:
+    requests:
+      storage: 100Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-pvc
+  namespace: project-argus
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: argus-ssd
+  resources:
+    requests:
+      storage: 20Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: minio-pvc
+  namespace: project-argus
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: argus-ssd
+  resources:
+    requests:
+      storage: 500Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-logs-pvc
+  namespace: project-argus
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: argus-ssd
+  resources:
+    requests:
+      storage: 10Gi

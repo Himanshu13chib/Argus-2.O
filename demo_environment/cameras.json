@@ -1,0 +1,54 @@
+[
+  {
+    "id": "demo_camera_001",
+    "name": "Border Sector Alpha - Main Gate",
+    "location": {
+      "lat": 28.6139,
+      "lng": 77.209
+    },
+    "type": "visible_thermal",
+    "resolution": "1920x1080",
+    "fps": 30,
+    "coverage_area": "Main border crossing point",
+    "status": "active"
+  },
+  {
+    "id": "demo_camera_002",
+    "name": "Border Sector Alpha - Perimeter East",
+    "location": {
+      "lat": 28.614,
+      "lng": 77.2095
+    },
+    "type": "thermal_night_vision",
+    "resolution": "1280x720",
+    "fps": 25,
+    "coverage_area": "Eastern perimeter fence",
+    "status": "active"
+  },
+  {
+    "id": "demo_camera_003",
+    "name": "Border Sector Beta - Patrol Route",
+    "location": {
+      "lat": 28.6135,
+      "lng": 77.2085
+    },
+    "type": "visible_ptz",
+    "resolution": "1920x1080",
+    "fps": 30,
+    "coverage_area": "Mobile patrol route monitoring",
+    "status": "active"
+  },
+  {
+    "id": "demo_camera_004",
+    "name": "Border Sector Beta - Remote Outpost",
+    "location": {
+      "lat": 28.613,
+      "lng": 77.208
+    },
+    "type": "thermal_radar",
+    "resolution": "640x480",
+    "fps": 15,
+    "coverage_area": "Remote area with radar integration",
+    "status": "maintenance"
+  }
+]

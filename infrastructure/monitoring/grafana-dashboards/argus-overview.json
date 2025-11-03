@@ -1,0 +1,153 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Project Argus - System Overview",
+    "tags": ["argus", "overview"],
+    "style": "dark",
+    "timezone": "browser",
+    "refresh": "30s",
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "System Status",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "up",
+            "legendFormat": "{{job}}"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "steps": [
+                {"color": "red", "value": 0},
+                {"color": "green", "value": 1}
+              ]
+            }
+          }
+        },
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0}
+      },
+      {
+        "id": 2,
+        "title": "Active Cameras",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "count(up{job=\"argus-edge-nodes\"})",
+            "legendFormat": "Total Cameras"
+          },
+          {
+            "expr": "count(up{job=\"argus-edge-nodes\"} == 1)",
+            "legendFormat": "Online Cameras"
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}
+      },
+      {
+        "id": 3,
+        "title": "Detection Rate",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(argus_detections_total[5m])",
+            "legendFormat": "Detections/sec - {{camera_id}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Detections per second",
+            "min": 0
+          }
+        ],
+        "gridPos": {"h": 8, "w": 24, "x": 0, "y": 8}
+      },
+      {
+        "id": 4,
+        "title": "Alert Summary",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(argus_alerts_total[5m])",
+            "legendFormat": "Alerts/sec - {{severity}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Alerts per second",
+            "min": 0
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16}
+      },
+      {
+        "id": 5,
+        "title": "Response Times",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "95th percentile - {{service}}"
+          },
+          {
+            "expr": "histogram_quantile(0.50, rate(http_request_duration_seconds_bucket[5m]))",
+            "legendFormat": "50th percentile - {{service}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Response time (seconds)",
+            "min": 0
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16}
+      },
+      {
+        "id": 6,
+        "title": "Resource Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(container_cpu_usage_seconds_total[5m]) * 100",
+            "legendFormat": "CPU % - {{container_label_com_docker_compose_service}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "CPU Usage %",
+            "min": 0,
+            "max": 100
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 24}
+      },
+      {
+        "id": 7,
+        "title": "Memory Usage",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "container_memory_usage_bytes / container_spec_memory_limit_bytes * 100",
+            "legendFormat": "Memory % - {{container_label_com_docker_compose_service}}"
+          }
+        ],
+        "yAxes": [
+          {
+            "label": "Memory Usage %",
+            "min": 0,
+            "max": 100
+          }
+        ],
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 24}
+      }
+    ]
+  }
+}

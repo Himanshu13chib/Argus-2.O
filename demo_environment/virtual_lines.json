@@ -1,0 +1,59 @@
+[
+  {
+    "id": "vline_main_gate",
+    "camera_id": "demo_camera_001",
+    "name": "Main Gate Crossing Line",
+    "points": [
+      {
+        "x": 400,
+        "y": 200
+      },
+      {
+        "x": 400,
+        "y": 600
+      }
+    ],
+    "type": "bidirectional",
+    "sensitivity": 0.8,
+    "active": true,
+    "description": "Primary crossing detection at main gate"
+  },
+  {
+    "id": "vline_perimeter_east",
+    "camera_id": "demo_camera_002",
+    "name": "Eastern Perimeter Breach Line",
+    "points": [
+      {
+        "x": 100,
+        "y": 300
+      },
+      {
+        "x": 700,
+        "y": 350
+      }
+    ],
+    "type": "inbound_only",
+    "sensitivity": 0.9,
+    "active": true,
+    "description": "Perimeter breach detection line"
+  },
+  {
+    "id": "vline_patrol_route",
+    "camera_id": "demo_camera_003",
+    "name": "Patrol Route Monitoring",
+    "points": [
+      {
+        "x": 300,
+        "y": 100
+      },
+      {
+        "x": 500,
+        "y": 500
+      }
+    ],
+    "type": "bidirectional",
+    "sensitivity": 0.7,
+    "active": true,
+    "description": "Patrol route activity monitoring"
+  }
+]

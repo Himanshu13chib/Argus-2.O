@@ -1,0 +1,85 @@
+# Development overrides for docker-compose
+version: '3.8'
+
+services:
+  # Development overrides for services
+  auth-service:
+    build:
+      target: development
+    volumes:
+      - ./services/auth-service:/app
+      - /app/node_modules
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+
+  security-service:
+    build:
+      target: development
+    volumes:
+      - ./services/security-service:/app
+      - /app/node_modules
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+
+  api-gateway:
+    build:
+      target: development
+    volumes:
+      - ./services/api-gateway:/app
+      - /app/node_modules
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+
+  alert-service:
+    build:
+      target: development
+    volumes:
+      - ./services/alert-service:/app
+      - /app/node_modules
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+
+  tracking-service:
+    build:
+      target: development
+    volumes:
+      - ./services/tracking-service:/app
+      - /app/node_modules
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+
+  evidence-service:
+    build:
+      target: development
+    volumes:
+      - ./services/evidence-service:/app
+      - /app/node_modules
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+
+  dashboard:
+    build:
+      target: development
+    volumes:
+      - ./dashboard:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_API_URL=http://localhost:8000/api
+      - REACT_APP_WS_URL=ws://localhost:8000/ws
+      - REACT_APP_AUTH_URL=http://localhost:8001/auth
+
+  edge-simulator:
+    volumes:
+      - ./edge:/app
+      - /app/models
+    environment:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+      - SIMULATION_SPEED=1.0

@@ -1,0 +1,342 @@
+[
+  {
+    "id": "inc_demo_001",
+    "alert_id": "alert_demo_001",
+    "status": "resolved",
+    "priority": "low",
+    "created_at": "2025-11-02T15:31:03.511832",
+    "created_by": "operator_1",
+    "assigned_to": "operator_1",
+    "description": "Unauthorized crossing confirmed - patrol dispatched",
+    "resolution": "confirmed_crossing",
+    "evidence_ids": [
+      "evidence_demo_001",
+      "evidence_demo_010"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T15:36:03.511832",
+        "author": "operator_1",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T15:46:03.511832",
+        "author": "operator_1",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Alpha",
+      "weather_conditions": "clear",
+      "patrol_notified": true
+    }
+  },
+  {
+    "id": "inc_demo_002",
+    "alert_id": "alert_demo_002",
+    "status": "open",
+    "priority": "medium",
+    "created_at": "2025-11-02T16:31:03.511832",
+    "created_by": "operator_2",
+    "assigned_to": "operator_2",
+    "description": "Investigation ongoing - reviewing footage",
+    "resolution": null,
+    "evidence_ids": [
+      "evidence_demo_002",
+      "evidence_demo_011"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T16:36:03.511832",
+        "author": "operator_2",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T16:46:03.511832",
+        "author": "operator_2",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Beta",
+      "weather_conditions": "foggy",
+      "patrol_notified": false
+    }
+  },
+  {
+    "id": "inc_demo_003",
+    "alert_id": "alert_demo_003",
+    "status": "resolved",
+    "priority": "high",
+    "created_at": "2025-11-02T17:31:03.511832",
+    "created_by": "operator_3",
+    "assigned_to": "operator_3",
+    "description": "False positive - animal movement",
+    "resolution": "false_positive",
+    "evidence_ids": [
+      "evidence_demo_003",
+      "evidence_demo_012"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T17:36:03.511832",
+        "author": "operator_3",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T17:46:03.511832",
+        "author": "operator_3",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Gamma",
+      "weather_conditions": "rainy",
+      "patrol_notified": true
+    }
+  },
+  {
+    "id": "inc_demo_004",
+    "alert_id": "alert_demo_004",
+    "status": "escalated",
+    "priority": "critical",
+    "created_at": "2025-11-02T18:31:03.511832",
+    "created_by": "operator_1",
+    "assigned_to": "operator_1",
+    "description": "Multiple crossings - supervisor notified",
+    "resolution": null,
+    "evidence_ids": [
+      "evidence_demo_004",
+      "evidence_demo_013"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T18:36:03.511832",
+        "author": "operator_1",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T18:46:03.511832",
+        "author": "operator_1",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Alpha",
+      "weather_conditions": "clear",
+      "patrol_notified": false
+    }
+  },
+  {
+    "id": "inc_demo_005",
+    "alert_id": "alert_demo_005",
+    "status": "closed",
+    "priority": "low",
+    "created_at": "2025-11-02T19:31:03.511832",
+    "created_by": "operator_2",
+    "assigned_to": "operator_2",
+    "description": "Incident resolved - subjects apprehended",
+    "resolution": "confirmed_crossing",
+    "evidence_ids": [
+      "evidence_demo_005",
+      "evidence_demo_014"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T19:36:03.511832",
+        "author": "operator_2",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T19:46:03.511832",
+        "author": "operator_2",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Beta",
+      "weather_conditions": "foggy",
+      "patrol_notified": true
+    }
+  },
+  {
+    "id": "inc_demo_006",
+    "alert_id": "alert_demo_006",
+    "status": "resolved",
+    "priority": "medium",
+    "created_at": "2025-11-02T20:31:03.511832",
+    "created_by": "operator_3",
+    "assigned_to": "operator_3",
+    "description": "Unauthorized crossing confirmed - patrol dispatched",
+    "resolution": "confirmed_crossing",
+    "evidence_ids": [
+      "evidence_demo_006",
+      "evidence_demo_015"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T20:36:03.511832",
+        "author": "operator_3",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T20:46:03.511832",
+        "author": "operator_3",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Gamma",
+      "weather_conditions": "rainy",
+      "patrol_notified": false
+    }
+  },
+  {
+    "id": "inc_demo_007",
+    "alert_id": "alert_demo_007",
+    "status": "open",
+    "priority": "high",
+    "created_at": "2025-11-02T21:31:03.511832",
+    "created_by": "operator_1",
+    "assigned_to": "operator_1",
+    "description": "Investigation ongoing - reviewing footage",
+    "resolution": null,
+    "evidence_ids": [
+      "evidence_demo_007",
+      "evidence_demo_016"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T21:36:03.511832",
+        "author": "operator_1",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T21:46:03.511832",
+        "author": "operator_1",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Alpha",
+      "weather_conditions": "clear",
+      "patrol_notified": true
+    }
+  },
+  {
+    "id": "inc_demo_008",
+    "alert_id": "alert_demo_008",
+    "status": "resolved",
+    "priority": "critical",
+    "created_at": "2025-11-02T22:31:03.511832",
+    "created_by": "operator_2",
+    "assigned_to": "operator_2",
+    "description": "False positive - animal movement",
+    "resolution": "false_positive",
+    "evidence_ids": [
+      "evidence_demo_008",
+      "evidence_demo_017"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T22:36:03.511832",
+        "author": "operator_2",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T22:46:03.511832",
+        "author": "operator_2",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Beta",
+      "weather_conditions": "foggy",
+      "patrol_notified": false
+    }
+  },
+  {
+    "id": "inc_demo_009",
+    "alert_id": "alert_demo_009",
+    "status": "escalated",
+    "priority": "low",
+    "created_at": "2025-11-02T23:31:03.511832",
+    "created_by": "operator_3",
+    "assigned_to": "operator_3",
+    "description": "Multiple crossings - supervisor notified",
+    "resolution": null,
+    "evidence_ids": [
+      "evidence_demo_009",
+      "evidence_demo_018"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-02T23:36:03.511832",
+        "author": "operator_3",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-02T23:46:03.511832",
+        "author": "operator_3",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Gamma",
+      "weather_conditions": "rainy",
+      "patrol_notified": true
+    }
+  },
+  {
+    "id": "inc_demo_010",
+    "alert_id": "alert_demo_010",
+    "status": "closed",
+    "priority": "medium",
+    "created_at": "2025-11-03T00:31:03.511832",
+    "created_by": "operator_1",
+    "assigned_to": "operator_1",
+    "description": "Incident resolved - subjects apprehended",
+    "resolution": "confirmed_crossing",
+    "evidence_ids": [
+      "evidence_demo_010",
+      "evidence_demo_019"
+    ],
+    "notes": [
+      {
+        "timestamp": "2025-11-03T00:36:03.511832",
+        "author": "operator_1",
+        "content": "Initial assessment completed",
+        "type": "investigation"
+      },
+      {
+        "timestamp": "2025-11-03T00:46:03.511832",
+        "author": "operator_1",
+        "content": "Additional evidence collected",
+        "type": "evidence"
+      }
+    ],
+    "metadata": {
+      "location": "Border Sector Alpha",
+      "weather_conditions": "clear",
+      "patrol_notified": false
+    }
+  }
+]

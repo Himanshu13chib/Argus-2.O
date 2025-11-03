@@ -1,0 +1,62 @@
+[
+  {
+    "name": "authorized_crossing_daytime",
+    "description": "Authorized personnel crossing during daytime",
+    "camera_id": "demo_camera_001",
+    "duration_seconds": 30,
+    "scenario_type": "normal_operation",
+    "expected_alerts": 0,
+    "people_count": 1,
+    "lighting": "daylight",
+    "weather": "clear",
+    "video_path": "demo_environment\\videos\\authorized_crossing_daytime.mp4"
+  },
+  {
+    "name": "unauthorized_crossing_night",
+    "description": "Unauthorized crossing attempt at night",
+    "camera_id": "demo_camera_002",
+    "duration_seconds": 45,
+    "scenario_type": "security_incident",
+    "expected_alerts": 1,
+    "people_count": 2,
+    "lighting": "night",
+    "weather": "clear",
+    "video_path": "demo_environment\\videos\\unauthorized_crossing_night.mp4"
+  },
+  {
+    "name": "multiple_crossings_simultaneous",
+    "description": "Multiple people crossing simultaneously",
+    "camera_id": "demo_camera_001",
+    "duration_seconds": 60,
+    "scenario_type": "high_activity",
+    "expected_alerts": 3,
+    "people_count": 4,
+    "lighting": "dawn",
+    "weather": "foggy",
+    "video_path": "demo_environment\\videos\\multiple_crossings_simultaneous.mp4"
+  },
+  {
+    "name": "false_positive_scenario",
+    "description": "Animals or debris causing false detection",
+    "camera_id": "demo_camera_003",
+    "duration_seconds": 20,
+    "scenario_type": "false_positive",
+    "expected_alerts": 0,
+    "people_count": 0,
+    "lighting": "daylight",
+    "weather": "windy",
+    "video_path": "demo_environment\\videos\\false_positive_scenario.mp4"
+  },
+  {
+    "name": "patrol_verification",
+    "description": "Security patrol verification crossing",
+    "camera_id": "demo_camera_003",
+    "duration_seconds": 25,
+    "scenario_type": "patrol_activity",
+    "expected_alerts": 0,
+    "people_count": 2,
+    "lighting": "daylight",
+    "weather": "clear",
+    "video_path": "demo_environment\\videos\\patrol_verification.mp4"
+  }
+]

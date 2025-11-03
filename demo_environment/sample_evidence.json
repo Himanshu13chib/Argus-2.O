@@ -1,0 +1,992 @@
+[
+  {
+    "id": "evidence_demo_001",
+    "type": "image",
+    "incident_id": "inc_demo_001",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T18:31:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_001.jpg",
+    "file_size": 102400,
+    "hash_sha256": "demo_hash_00000000000000000000000000000001",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000001",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_183103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T18:31:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T18:36:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_002",
+    "type": "video",
+    "incident_id": "inc_demo_002",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T18:41:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_002.mp4",
+    "file_size": 153600,
+    "hash_sha256": "demo_hash_00000000000000000000000000000002",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000002",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_184103.jpg",
+      "resolution": "1280x720",
+      "duration": "11s",
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T18:41:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T18:46:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_003",
+    "type": "metadata",
+    "incident_id": "inc_demo_003",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T18:51:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_003.json",
+    "file_size": 204800,
+    "hash_sha256": "demo_hash_00000000000000000000000000000003",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000003",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_185103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T18:51:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T18:56:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_004",
+    "type": "audio",
+    "incident_id": "inc_demo_004",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T19:01:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_004.wav",
+    "file_size": 256000,
+    "hash_sha256": "demo_hash_00000000000000000000000000000004",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000004",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_190103.jpg",
+      "resolution": "1280x720",
+      "duration": null,
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T19:01:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T19:06:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_005",
+    "type": "image",
+    "incident_id": "inc_demo_005",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T19:11:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_005.jpg",
+    "file_size": 307200,
+    "hash_sha256": "demo_hash_00000000000000000000000000000005",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000005",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_191103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T19:11:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T19:16:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_006",
+    "type": "video",
+    "incident_id": "inc_demo_006",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T19:21:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_006.mp4",
+    "file_size": 358400,
+    "hash_sha256": "demo_hash_00000000000000000000000000000006",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000006",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_192103.jpg",
+      "resolution": "1280x720",
+      "duration": "15s",
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T19:21:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T19:26:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_007",
+    "type": "metadata",
+    "incident_id": "inc_demo_007",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T19:31:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_007.json",
+    "file_size": 409600,
+    "hash_sha256": "demo_hash_00000000000000000000000000000007",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000007",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_193103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T19:31:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T19:36:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_008",
+    "type": "audio",
+    "incident_id": "inc_demo_008",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T19:41:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_008.wav",
+    "file_size": 460800,
+    "hash_sha256": "demo_hash_00000000000000000000000000000008",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000008",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_194103.jpg",
+      "resolution": "1280x720",
+      "duration": null,
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T19:41:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T19:46:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_009",
+    "type": "image",
+    "incident_id": "inc_demo_009",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T19:51:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_009.jpg",
+    "file_size": 512000,
+    "hash_sha256": "demo_hash_00000000000000000000000000000009",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000009",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_195103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T19:51:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T19:56:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_010",
+    "type": "video",
+    "incident_id": "inc_demo_010",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T20:01:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_010.mp4",
+    "file_size": 563200,
+    "hash_sha256": "demo_hash_00000000000000000000000000000010",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000010",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_200103.jpg",
+      "resolution": "1280x720",
+      "duration": "19s",
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T20:01:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T20:06:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_011",
+    "type": "metadata",
+    "incident_id": "inc_demo_001",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T20:11:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_011.json",
+    "file_size": 614400,
+    "hash_sha256": "demo_hash_00000000000000000000000000000011",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000011",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_201103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T20:11:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T20:16:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_012",
+    "type": "audio",
+    "incident_id": "inc_demo_002",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T20:21:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_012.wav",
+    "file_size": 665600,
+    "hash_sha256": "demo_hash_00000000000000000000000000000012",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000012",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_202103.jpg",
+      "resolution": "1280x720",
+      "duration": null,
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T20:21:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T20:26:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_013",
+    "type": "image",
+    "incident_id": "inc_demo_003",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T20:31:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_013.jpg",
+    "file_size": 716800,
+    "hash_sha256": "demo_hash_00000000000000000000000000000013",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000013",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_203103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T20:31:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T20:36:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_014",
+    "type": "video",
+    "incident_id": "inc_demo_004",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T20:41:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_014.mp4",
+    "file_size": 768000,
+    "hash_sha256": "demo_hash_00000000000000000000000000000014",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000014",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_204103.jpg",
+      "resolution": "1280x720",
+      "duration": "23s",
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T20:41:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T20:46:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_015",
+    "type": "metadata",
+    "incident_id": "inc_demo_005",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T20:51:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_015.json",
+    "file_size": 819200,
+    "hash_sha256": "demo_hash_00000000000000000000000000000015",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000015",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_205103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T20:51:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T20:56:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_016",
+    "type": "audio",
+    "incident_id": "inc_demo_006",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T21:01:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_016.wav",
+    "file_size": 870400,
+    "hash_sha256": "demo_hash_00000000000000000000000000000016",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000016",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_210103.jpg",
+      "resolution": "1280x720",
+      "duration": null,
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T21:01:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T21:06:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_017",
+    "type": "image",
+    "incident_id": "inc_demo_007",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T21:11:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_017.jpg",
+    "file_size": 921600,
+    "hash_sha256": "demo_hash_00000000000000000000000000000017",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000017",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_211103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T21:11:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T21:16:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_018",
+    "type": "video",
+    "incident_id": "inc_demo_008",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T21:21:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_018.mp4",
+    "file_size": 972800,
+    "hash_sha256": "demo_hash_00000000000000000000000000000018",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000018",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_212103.jpg",
+      "resolution": "1280x720",
+      "duration": "27s",
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T21:21:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T21:26:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_019",
+    "type": "metadata",
+    "incident_id": "inc_demo_009",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T21:31:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_019.json",
+    "file_size": 1024000,
+    "hash_sha256": "demo_hash_00000000000000000000000000000019",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000019",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_213103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T21:31:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T21:36:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_020",
+    "type": "audio",
+    "incident_id": "inc_demo_010",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T21:41:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_020.wav",
+    "file_size": 1075200,
+    "hash_sha256": "demo_hash_00000000000000000000000000000020",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000020",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_214103.jpg",
+      "resolution": "1280x720",
+      "duration": null,
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T21:41:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T21:46:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_021",
+    "type": "image",
+    "incident_id": "inc_demo_001",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T21:51:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_021.jpg",
+    "file_size": 1126400,
+    "hash_sha256": "demo_hash_00000000000000000000000000000021",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000021",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_215103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T21:51:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T21:56:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_022",
+    "type": "video",
+    "incident_id": "inc_demo_002",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T22:01:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_022.mp4",
+    "file_size": 1177600,
+    "hash_sha256": "demo_hash_00000000000000000000000000000022",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000022",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_220103.jpg",
+      "resolution": "1280x720",
+      "duration": "31s",
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T22:01:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T22:06:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_023",
+    "type": "metadata",
+    "incident_id": "inc_demo_003",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T22:11:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_023.json",
+    "file_size": 1228800,
+    "hash_sha256": "demo_hash_00000000000000000000000000000023",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000023",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_221103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T22:11:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T22:16:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_024",
+    "type": "audio",
+    "incident_id": "inc_demo_004",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T22:21:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_024.wav",
+    "file_size": 1280000,
+    "hash_sha256": "demo_hash_00000000000000000000000000000024",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000024",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_222103.jpg",
+      "resolution": "1280x720",
+      "duration": null,
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T22:21:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T22:26:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_025",
+    "type": "image",
+    "incident_id": "inc_demo_005",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T22:31:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_025.jpg",
+    "file_size": 1331200,
+    "hash_sha256": "demo_hash_00000000000000000000000000000025",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000025",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_223103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T22:31:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T22:36:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_026",
+    "type": "video",
+    "incident_id": "inc_demo_006",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T22:41:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_026.mp4",
+    "file_size": 1382400,
+    "hash_sha256": "demo_hash_00000000000000000000000000000026",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000026",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_224103.jpg",
+      "resolution": "1280x720",
+      "duration": "35s",
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T22:41:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T22:46:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_027",
+    "type": "metadata",
+    "incident_id": "inc_demo_007",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T22:51:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_027.json",
+    "file_size": 1433600,
+    "hash_sha256": "demo_hash_00000000000000000000000000000027",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000027",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_225103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T22:51:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T22:56:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_028",
+    "type": "audio",
+    "incident_id": "inc_demo_008",
+    "camera_id": "demo_camera_001",
+    "created_at": "2025-11-02T23:01:03.515832",
+    "created_by": "operator_1",
+    "file_path": "evidence/demo_028.wav",
+    "file_size": 1484800,
+    "hash_sha256": "demo_hash_00000000000000000000000000000028",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000028",
+    "status": "sealed",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_230103.jpg",
+      "resolution": "1280x720",
+      "duration": null,
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T23:01:03.515832",
+        "action": "created",
+        "user_id": "operator_1",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T23:06:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_029",
+    "type": "image",
+    "incident_id": "inc_demo_009",
+    "camera_id": "demo_camera_002",
+    "created_at": "2025-11-02T23:11:03.515832",
+    "created_by": "operator_2",
+    "file_path": "evidence/demo_029.jpg",
+    "file_size": 1536000,
+    "hash_sha256": "demo_hash_00000000000000000000000000000029",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000029",
+    "status": "pending",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_231103.jpg",
+      "resolution": "1920x1080",
+      "duration": null,
+      "confidence": 0.8
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T23:11:03.515832",
+        "action": "created",
+        "user_id": "operator_2",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T23:16:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_1",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  },
+  {
+    "id": "evidence_demo_030",
+    "type": "video",
+    "incident_id": "inc_demo_010",
+    "camera_id": "demo_camera_003",
+    "created_at": "2025-11-02T23:21:03.515832",
+    "created_by": "operator_3",
+    "file_path": "evidence/demo_030.mp4",
+    "file_size": 1587200,
+    "hash_sha256": "demo_hash_00000000000000000000000000000030",
+    "hmac_signature": "demo_signature_0000000000000000000000000000000000000000000000000000000000000030",
+    "status": "verified",
+    "metadata": {
+      "original_filename": "camera_capture_20251102_232103.jpg",
+      "resolution": "1280x720",
+      "duration": "39s",
+      "confidence": 0.9
+    },
+    "chain_of_custody": [
+      {
+        "timestamp": "2025-11-02T23:21:03.515832",
+        "action": "created",
+        "user_id": "operator_3",
+        "notes": "Evidence automatically captured"
+      },
+      {
+        "timestamp": "2025-11-02T23:26:03.515832",
+        "action": "sealed",
+        "user_id": "supervisor_2",
+        "notes": "Evidence sealed for investigation"
+      }
+    ]
+  }
+]

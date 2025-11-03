@@ -1,0 +1,68 @@
+# Edge Node Configuration for Project Argus
+
+# Node identification
+node_id: "edge_node_001"
+location: "Border Checkpoint Alpha"
+gps_coordinates: [28.6139, 77.2090]  # Example coordinates
+
+# Camera configuration
+cameras:
+  - id: "cam_001"
+    name: "Main Gate Camera"
+    type: "visible_light"
+    rtsp_url: "rtsp://192.168.1.100:554/stream"
+    username: "admin"
+    password: "password"
+    enabled: true
+  - id: "cam_002"
+    name: "Thermal Camera"
+    type: "thermal"
+    rtsp_url: "rtsp://192.168.1.101:554/stream"
+    username: "admin"
+    password: "password"
+    enabled: true
+
+# Detection configuration
+detection:
+  model_path: "/app/models/yolov8n.pt"
+  confidence_threshold: 0.7
+  nms_threshold: 0.45
+  input_size: [640, 640]
+  batch_size: 1
+  device: "cuda:0"  # or "cpu"
+
+# Tracking configuration
+tracking:
+  max_age: 30
+  min_hits: 3
+  iou_threshold: 0.3
+  reid_threshold: 0.7
+
+# Virtual lines configuration
+virtual_lines:
+  - id: "line_001"
+    camera_id: "cam_001"
+    name: "Border Line"
+    points: [[100, 300], [500, 300]]
+    direction: "bidirectional"
+    sensitivity: 0.8
+
+# API Gateway connection
+api_gateway:
+  url: "http://api-gateway:8000"
+  timeout: 30
+  retry_attempts: 3
+
+# Health monitoring
+health:
+  check_interval: 30
+  temperature_threshold: 80.0
+  cpu_threshold: 90.0
+  memory_threshold: 85.0
+
+# Logging
+logging:
+  level: "INFO"
+  file: "/app/logs/edge_node.log"
+  max_size: "100MB"
+  backup_count: 5

@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argus-config
+  namespace: project-argus
+data:
+  # Database configuration
+  POSTGRES_DB: "project_argus"
+  POSTGRES_USER: "argus_user"
+  
+  # Redis configuration
+  REDIS_DB_AUTH: "4"
+  REDIS_DB_SECURITY: "5"
+  REDIS_DB_GATEWAY: "0"
+  REDIS_DB_ALERTS: "1"
+  REDIS_DB_TRACKING: "2"
+  REDIS_DB_EVIDENCE: "3"
+  
+  # MinIO configuration
+  MINIO_ROOT_USER: "argus_admin"
+  
+  # Service URLs
+  AUTH_SERVICE_URL: "http://auth-service:8001"
+  SECURITY_SERVICE_URL: "http://security-service:8002"
+  ALERT_SERVICE_URL: "http://alert-service:8003"
+  TRACKING_SERVICE_URL: "http://tracking-service:8004"
+  EVIDENCE_SERVICE_URL: "http://evidence-service:8005"
+  
+  # Application configuration
+  ENVIRONMENT: "production"
+  LOG_LEVEL: "INFO"
+  JWT_EXPIRATION_HOURS: "24"
+  
+  # Frontend configuration
+  REACT_APP_API_URL: "https://api.argus.local/api"
+  REACT_APP_WS_URL: "wss://api.argus.local/ws"
+  REACT_APP_AUTH_URL: "https://api.argus.local/auth"
